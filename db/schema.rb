@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_164510) do
+ActiveRecord::Schema.define(version: 2020_07_27_220944) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -40,6 +40,19 @@ ActiveRecord::Schema.define(version: 2020_07_27_164510) do
     t.boolean "has_dog_specific_area"
   end
 
+  create_table "parties", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "guest_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.string "date"
+    t.string "time"
+    t.integer "park_id"
+    t.integer "dog_id"
+    t.index ["guest_id"], name: "index_parties_on_guest_id"
+    t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "location"
@@ -50,4 +63,6 @@ ActiveRecord::Schema.define(version: 2020_07_27_164510) do
   add_foreign_key "dogs", "users"
   add_foreign_key "favorites", "parks"
   add_foreign_key "favorites", "users"
+  add_foreign_key "parties", "users"
+  add_foreign_key "parties", "users", column: "guest_id"
 end

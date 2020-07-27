@@ -1,0 +1,13 @@
+<h1>EXCELLENT PARTY</h1>
+
+<h2>A great party with <%= @party.user.name %> and <%= @party.guest.name %> </h2>
+<h3> and their dogs 
+<% @party.user.dogs.each do |dog|%>
+    <%= link_to dog.name, dog_path(dog)%> +     
+<% end %>
+
+<% @party.guest.dogs.each do |dog| %>
+ <%= link_to dog.name, dog_path(dog)%>    
+<% end %>
+
+</h3>

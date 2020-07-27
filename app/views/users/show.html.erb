@@ -25,3 +25,16 @@
         </ul>
     </div>
 <% end %>
+
+<h1> I've HAD SOME GOOD DOG PARTIES TOO</h1>
+
+<% @user.parties.each do |party| %>
+    <div>
+        <ul>
+            <li>
+                <%= link_to "Party with #{party.guest.name}", party_path(party) %>
+            </li>
+        </ul>
+    </div>
+
+<% end%>
