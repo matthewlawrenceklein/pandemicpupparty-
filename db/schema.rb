@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_27_161927) do
+ActiveRecord::Schema.define(version: 2020_07_27_164510) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 2020_07_27_161927) do
     t.string "location"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.boolean "has_dog_specific_area"
   end
 
   create_table "users", force: :cascade do |t|
