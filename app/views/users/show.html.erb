@@ -1,0 +1,27 @@
+<h1> HI IM A REAL PERSON NAMED <%= @user.name %></h1>
+<h2> IM FROM <%= @user.location %></h2>
+<br>
+<h2>MY BEAUTIFUL DOGS</h2>
+<% @user.dogs.each do |dog| %>
+
+<div>
+    <ul>
+        <li>
+            <%= link_to dog.name, dog_path(dog) %>
+        </li>
+    </ul>
+<% end %>
+</div>
+
+<%= button_to 'BACK', users_path, method: :get %>
+
+<h1>I LOVE TO GO TO THESE PARKS</h1>
+<% @user.parks.each do |park|%>
+    <div>
+        <ul>
+            <li>
+                <%= link_to park.name, park_path(park) %>
+            </li>
+        </ul>
+    </div>
+<% end %>

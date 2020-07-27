@@ -1,0 +1,11 @@
+<h1>PARKS</h1>
+
+<% @parks.each do |park| %>
+    <div>
+        <ul>
+            <li>
+                <%= link_to park.name, park_path(park) %>
+            </li>
+        </ul>
+    </div>
+<% end %>

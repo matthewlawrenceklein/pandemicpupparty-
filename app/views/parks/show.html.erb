@@ -1,0 +1,14 @@
+<h1>THIS PARK IS <%= @park.name %></h1>
+<h2> THIS PARK IS LOCATED IN <%= @park.location %></h2>
+
+<h2> HERE ARE SOME FOLKS THAT LIKE THIS PARK</h2>
+
+<% @park.users.each do |user|%>
+    <div>
+        <ul>
+            <li>
+                <%= link_to user.name, user_path(user) %>
+            </li>
+        </ul>
+    </div>
+<% end %>

@@ -1,0 +1,4 @@
+<h1> THIS DOG IS <%= @dog.name %></h1>
+<h2>THIS DOG BELONGS TO <%= link_to @dog.user.name, user_path(@dog.user) %></h2>
+<br>
+<h2><%= button_to 'Back', dogs_path, method: :get %></h2>
