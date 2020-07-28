@@ -19,6 +19,7 @@
               <li><a href="<%= parties_path %>"">Parties</a></li>
               <li><a href="<%= dogs_path %>">Pups</a></li>
             </ul>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
               <% if @current_user %>
                   <li><a href="<%= logout_path %>">Log Out</a></li>
@@ -27,6 +28,7 @@
                   <li><a href=<%= new_user_path %>>Sign Up!</a></li>
               <% end %>
             </ul>
+
           </div>
         </nav>
         <!-- Page Layout here -->
