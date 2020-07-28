@@ -1,6 +1,7 @@
 <h1>DOGS</h1>
 
         <main class="cards">
+
             <% @dogs.each do |dog|%>
                 <article class="card z-depth-3">
                     <img src="<%= dog.picture %>">
@@ -10,5 +11,6 @@
                         <button><%= link_to dog.name, dog_path(dog) %></button>
                     </div>
                 </article>
+         
             <% end %>
         </main>

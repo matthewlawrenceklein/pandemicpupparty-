@@ -20,13 +20,15 @@
               <li><a href=<%= dogs_path %>>Pups</a></li>
             </ul>
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="<%= parks_path %>">Sign In!</a></li>
-              <li><a href=<%= parties_path %>>Sign Up!</a></li>
+              <% if @current_user %>
+                  <li><a href="<%= logout_path %>">Log Out</a></li>
+              <% else %>
+                  <li><a href="<%= new_session_path %>">Sign In!</a></li>
+                  <li><a href=<%= new_user_path %>>Sign Up!</a></li>
+              <% end %>
             </ul>
           </div>
         </nav>
-
-
         <!-- Page Layout here -->
     <div class="row">
 
