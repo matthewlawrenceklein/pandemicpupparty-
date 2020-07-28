@@ -2,27 +2,54 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+
+.grid-container {
+    display: grid;
+    grid-auto-flow: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 10px;
+    height: 150vh;
+    border-radius: 10px
+  }
+
+
+h1 {
+    text-align: center;
+}
 .cards {
     display: flex;
     flex-wrap: wrap;
-    align-items: stretch;
+    align-items: center;
     margin: 15px;
+    justify-content: space-evenly;
   }
+  
   .card {
     flex: 0 0 200px;
     margin: 10px;
-    border: 1px solid #ccc;
+    border: 20px;
+    border-radius: 10px
   } 
+
   .card img {
-    max-width: 100%;
+    max-width: 90%;
   }
   .card .text {
     padding: 0 20px 20px;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+  
   }
+
   .card .text > button {
-    background: gray;
-    border: 0;
-    color: white;
+    background: #e3f2fd;
+    border: 15;
+    border-color: #64b5f6;
+    border-radius: 20px;
+    color: #64b5f6;
     padding: 10px;
     width: 100%;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
     }
+

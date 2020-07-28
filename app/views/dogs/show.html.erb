@@ -1,4 +1,4 @@
-<h1> THIS DOG IS <%= @dog.name %></h1>
-<h2>THIS DOG BELONGS TO <%= link_to @dog.user.name, user_path(@dog.user) %></h2>
+<h1> This is <%= @dog.name %></h1>
+<h3>This dog belongs to <%= link_to @dog.user.name, user_path(@dog.user) %></h3>
 <br>
-<h2><%= button_to 'Back', dogs_path, method: :get %></h2>
+<h5><%= button_to 'Back', dogs_path, method: :get %></h5>
