@@ -1,13 +1,15 @@
-<h1>EXCELLENT PARTY</h1>
 
-<h2>A great party with <%= @party.user.name %> and <%= @party.guest.name %> </h2>
-<h3> and their dogs 
-<% @party.user.dogs.each do |dog|%>
-    <%= link_to dog.name, dog_path(dog)%> +     
-<% end %>
+<div class="container">
 
-<% @party.guest.dogs.each do |dog| %>
- <%= link_to dog.name, dog_path(dog)%>    
-<% end %>
+    <h1>EXCELLENT PARTY</h1>
+    <% park = Park.all.find { |park| park.id == @party.park_id}%>
+    <h2> at <%= link_to park.name, park_path(park) %></h2>
+    <h3> on <%= @party.date %> at <%= @party.time %> </h3>
 
-</h3>
+    <% @party.users.each do |user| %>
+        <% user.dogs.each do |dog| %>
+        <%= image_tag dog.picture %>
+        <% end %>
+    <% end %>
+
+</div>

@@ -1,11 +1,15 @@
-<h1>PARKS</h1>
+<h1>Parks</h1>
 
-<% @parks.each do |park| %>
-    <div>
-        <ul>
-            <li>
-                <%= link_to park.name, park_path(park) %>
-            </li>
-        </ul>
-    </div>
-<% end %>
+        <main class="cards">
+
+            <% @parks.each do |park|%>            
+                <article class="card z-depth-3">
+                    <img src="<%= park.park_img %>">
+                    <div class="text">
+                        <h3>It's a park at <%= park.name %></h3>
+                        <button><%= link_to 'Add to Favorites!', park_path(park) %></button>
+                    </div>
+                </article>
+         
+            <% end %>
+        </main>
