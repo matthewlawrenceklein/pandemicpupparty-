@@ -6,12 +6,13 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   </head>
 
-  <body>
+  <body class="teal lighten-5">
     <div class="container">
        <nav>
-          <div class="nav-wrapper">
+          <div class="nav-wrapper teal lighten-2 z-depth-2">
             <a href="#" class="brand-logo center">Pup Party</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
               <li><a href="<%= parks_path %>">Parks</a></li>
@@ -24,7 +25,27 @@
             </ul>
           </div>
         </nav>
+
+
+        <!-- Page Layout here -->
+    <div class="row">
+
+      <div class="col s3 grey z-depth-4">
+        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">location_on</i>My Parks</a>
+        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">pets</i>My Pups</a>
+        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">people</i>My Parties</a>
+      </div>
+
+      <div class="col s9 indigo lighten-3 z-depth-4">
       <%= yield %>
+      </div>
+
+    </div>
+
+
+
+
+
     </div>
   </body>
 </html>
