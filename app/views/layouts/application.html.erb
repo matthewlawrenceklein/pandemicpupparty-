@@ -4,12 +4,27 @@
     <title>Pandemicpup</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
-    <%= yield %>
+    <div class="container">
+       <nav>
+          <div class="nav-wrapper">
+            <a href="#" class="brand-logo center">Pup Party</a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+              <li><a href="<%= parks_path %>">Parks</a></li>
+              <li><a href=<%= parties_path %>>Parties</a></li>
+              <li><a href=<%= dogs_path %>>Pups</a></li>
+            </ul>
+            <ul id="nav-mobile" class="right hide-on-med-and-down">
+              <li><a href="<%= parks_path %>">Sign In!</a></li>
+              <li><a href=<%= parties_path %>>Sign Up!</a></li>
+            </ul>
+          </div>
+        </nav>
+      <%= yield %>
+    </div>
   </body>
 </html>

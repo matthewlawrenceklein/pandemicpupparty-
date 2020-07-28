@@ -5,7 +5,10 @@
     <div>
         <ul>
             <li>
-                <%= link_to dog.name, dog_path(dog) %>
+                <div class="row">
+                    <div class="col s4 m2" ><%= link_to dog.name, dog_path(dog) %></div>
+                    <a class="waves-effect waves-light btn">button</a>
+                </div>
             </li>
         </ul>
     </div>
