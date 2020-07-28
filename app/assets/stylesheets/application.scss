@@ -16,10 +16,15 @@
  @import "https://fonts.googleapis.com/icon?family=Material+Icons";
  @import "materialize";
 
+ body {
+    background: url("https://www.lubrisyn.com/wp-content/uploads/2017/08/group-of-dog-at-dog-park-1024x404.png");
+    background-size: cover;
+    background-position: center;
+  }
 
  .box {
-    display: flex; /* or inline-flex */
-    align-content: flex-start;
+    display: stretch; /* or inline-flex */
+    align-content: left;
 }
 
 .item {
@@ -30,4 +35,9 @@
 .img {
     max-width: 100px;
     height: auto;
+}
+
+.row {
+    max-width:1500px;
+    align-content: flex-start;
 }
