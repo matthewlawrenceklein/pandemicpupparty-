@@ -6,7 +6,6 @@ class FavoritesController < ApplicationController
 
     def create
         @favorite = Favorite.create(favorite_params)
-        byebug
         redirect_to user_path(@current_user)
     end
 
