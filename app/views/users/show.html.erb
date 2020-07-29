@@ -1,40 +1,56 @@
-<h1> HI IM A REAL PERSON NAMED <%= @user.name %></h1>
-<h2> IM FROM <%= @user.location %></h2>
-<br>
-<h2>MY BEAUTIFUL DOGS</h2>
-<% @user.dogs.each do |dog| %>
+<div class="container">
 
-<div>
-    <ul>
-        <li>
-            <%= link_to dog.name, dog_path(dog) %>
-        </li>
-    </ul>
-<% end %>
+<h3><%= @user.name.capitalize %>'s profile</h3>
+
+    <% if @current_user.id == @user.id %>
+        <%= button_to 'Add a Pup', new_dog_path, method: :get %>
+        <%= button_to 'Favorite a Park', parks_path, method: :get %>
+        <%= button_to 'Start a Party', new_party_path, method: :get %>
+    <% end %>
+
+
+
+ <main class="cards">
+
+            <% @user.dogs.each do |dog|%>
+                <article class="card z-depth-3">
+                    <img src="<%= dog.picture %>">
+                    <div class="text">
+                        <h3><%= dog.name %></h3>
+                        <button class="grey lighten-2"><%= link_to dog.name, dog_path(dog) %></button>
+                    </div>
+                </article>
+            <% end %>
+    <hr>
+
+        
+
+            <% @user.parties.each do |party|%>
+                <% park = Park.all.find { |park| park.id == party.park_id }%>
+            
+                <article class="card z-depth-3">
+                    <img src="<%= park.park_img %>">
+                    <div class="text">
+                        <h3>It's a party at <%= park.name %></h3>
+                        <p>On ##date## <%= party.date %> at ##time## <%= party.time %> </p>
+                        <button><%= link_to 'Join the Party!', party_path(party) %></button>
+                    </div>
+                </article>
+         
+            <% end %>
+    
+    <hr>
+
+            <% @user.favorites.each do |favorite|%>
+                <% park = Park.all.find { |park| park.id == favorite.park_id }%>
+            
+                <article class="card z-depth-3">
+                    <img src="<%= park.park_img %>">
+                    <div class="text">
+                        <p>park.name</p>
+                    </div>
+                </article>
+            <% end %>
+
+</main>
 </div>
-
-<%= button_to 'BACK', users_path, method: :get %>
-
-<h1>I LOVE TO GO TO THESE PARKS</h1>
-<% @user.parks.each do |park|%>
-    <div>
-        <ul>
-            <li>
-                <%= link_to park.name, park_path(park) %>
-            </li>
-        </ul>
-    </div>
-<% end %>
-
-<h1> I've HAD SOME GOOD DOG PARTIES TOO</h1>
-
-<% @user.parties.each do |party| %>
-    <div>
-        <ul>
-            <li>
-                <%= link_to "Party with #{party.guest.name}", party_path(party) %>
-            </li>
-        </ul>
-    </div>
-
-<% end%>

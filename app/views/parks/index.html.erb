@@ -3,11 +3,11 @@
         <main class="cards">
 
             <% @parks.each do |park|%>            
-                <article class="card z-depth-3">
+                <article class="card z-depth-3 ">
                     <img src="<%= park.park_img %>">
                     <div class="text">
-                        <h3>It's a park at <%= park.name %></h3>
-                        <button><%= link_to 'Add to Favorites!', park_path(park) %></button>
+                        <h3><%= park.name %> Dog Park</h3>
+                        <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id } %>
                     </div>
                 </article>
          

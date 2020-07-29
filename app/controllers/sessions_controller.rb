@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
       def logout 
         # session[:user_id] = nil 
         session.delete(:user_id)
-        redirect_to new_user_path
+        redirect_to root_path
     
       end 
 
