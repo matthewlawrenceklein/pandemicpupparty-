@@ -20,6 +20,7 @@
     background: url("https://www.lubrisyn.com/wp-content/uploads/2017/08/group-of-dog-at-dog-park-1024x404.png");
     background-size: cover;
     background-position: center;
+    font-family: 'Trebuchet MS', Helvetica, sans-serif;
   }
 
  .box {
@@ -40,4 +41,38 @@
 .row {
     max-width:1500px;
     align-content: flex-start;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
+
+.landing-grid-container{
+    display: grid;
+    grid-auto-flow: column;
+    background-color: rgba(255, 255, 255, 0.5);
+    max-width: 100%;
+    margin: 0px auto;
+    padding: 10px;
+    height: 150vh;
+    border-radius: 10px
+  }
+
+.landing-card {
+    width: 400px;
+    height: 300px;
+    display: inline-block;
+    flex-wrap: nowrap;
+    align-items: center;
+    margin: 15px;
+    justify-content: space-evenly;
+    color: white;
+}
+
+.landing-card-image {
+    height: 600px;
+    width: 700px;
+    object-fit: cover;
+}
+
+
+
+
+

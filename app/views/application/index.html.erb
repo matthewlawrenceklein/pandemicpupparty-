@@ -1,3 +1,37 @@
-<%= button_to 'Dogs', dogs_path, method: :get %> <br>
-<%= button_to 'Parks', parks_path, method: :get %> <br>
-<%= button_to 'Users', users_path, method: :get %> <br>
+<main class="landing-grid-container">
+  <div class="row">
+    <div class="col s12 m6">
+      <div class="landing-card small">
+        <div class="landing-card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRsm-gIQ7kT5b-eZBN14dCnEwzjrQCWlvkjog&usqp=CAU">
+          <a class="waves-effect waves-light btn-small"><%= button_to 'Dogs', dogs_path, method: :get %></a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="col s12 m6">
+      <div class="landing-card small">
+        <div class="landing-card-image">
+          <img src="https://www.belmont.gov/Home/ShowPublishedImage/528/635316228473430000">
+          <a class="waves-effect waves-light btn-small"><%= button_to 'Parks', parks_path, method: :get %> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+    <div class="row">
+    <div class="col s12 m6">
+      <div class="landing-card small">
+        <div class="landing-card-image">
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcQzx8o5YU5AN7R40xv2kuUm_0bi2elKu1h3VA&usqp=CAU">
+          <a class="waves-effect waves-light btn-small"><%= button_to 'Users', users_path, method: :get %> </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
