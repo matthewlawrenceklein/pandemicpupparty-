@@ -27,8 +27,7 @@
       <br>
       <div class="form_div"><%= f.collection_select :park_id, Park.all, :id, :name %></div>
       <br>
-      <div class="form_div"><%= f.collection_select :dog_id, @party.user.dogs, :id, :name %></div>
-      <br>
+      
 
       <div class="form_div"><%= f.submit %></div>
     <% end %>

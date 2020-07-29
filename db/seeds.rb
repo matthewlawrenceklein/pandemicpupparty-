@@ -28,7 +28,7 @@ Park.create(name: "Fetch Land", location: "Logan Square", park_img: "https://www
 #     Party.create(user_id: user.id, park_id: Park.all.sample.id, dog_id: user.dogs.sample.id, date: Faker::Date.between(from: '2014-09-23', to: '2014-09-25'), time: DateTime.now)
 # end
 
-Party.create(user_id: User.all.sample.id, park_id: Park.all.sample.id)
+# Party.create(user_id: User.all.sample.id, park_id: Park.all.sample.id)
 # 50.times do
     # UserParty.create(user_id: User.all.sample.id, party_id: Party.all.sample.id)
 # end
