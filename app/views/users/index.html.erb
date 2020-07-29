@@ -1,10 +1,15 @@
 <h1>USERS</h1>
-<div>
-    <% @users.each do |user| %>
-    <ul>
-        <li>
-            <%= link_to user.name, user_path(user)  %>
-        </li>
-    </ul>
-    <% end %>
-</div>
+
+
+    <main class="cards">
+
+        <% @users.each do |user| %>           
+            <article class="card z-depth-3 ">
+                <div class="text">
+                    <h3><%= user.name %></h3>
+                    <a class="waves-effect waves-light btn"><%= button_to "Profile", user_path(user), method: :get %></a>
+                </div>
+            </article>
+        
+        <% end %>
+    </main>
