@@ -7,7 +7,8 @@
             <%= button_to 'Favorite a Park', parks_path, method: :get %>
             <%= button_to 'Start a Party', new_party_path, method: :get %>
         <% end %>
-
+<hr>
+<h4>My Pups</h4>
     <main class="cards">
         <% @user.dogs.each do |dog|%>
             <article class="card z-depth-3">
@@ -20,6 +21,7 @@
         <% end %>
     </main> 
         <hr>
+        <h4>My Parties</h4>
         <br>
 
     <main class="cards">
@@ -37,6 +39,7 @@
     </main> 
     
         <hr>
+        <h4>My Parks</h4>
         <br>
 
     <main class="cards">

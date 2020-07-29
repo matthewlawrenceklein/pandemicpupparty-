@@ -6,7 +6,7 @@
 
 
 <% if @current_user %>
-    <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id }
+    <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: @park.id, user_id: @current_user.id } %>
 <% else %>
     <%= button_to 'Sign up to add to your favorites', new_user_path, method: :get %>
 <% end  %> 
