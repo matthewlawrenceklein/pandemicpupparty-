@@ -1,16 +1,12 @@
-<h1>THIS PARK IS <%= @park.name %></h1>
-<h2> THIS PARK IS LOCATED IN <%= @park.location %></h2>
 
-<h2> HERE ARE SOME FOLKS THAT LIKE THIS PARK</h2>
+<div>
+   park -  <%= @park.name %> <br>
+   location -  <%= @park.location %>
+</div>
 
-<% @park.users.each do |user|%>
-    <div>
-        <ul>
-            <li>
-                <%= link_to user.name, user_path(user) %>
-            </li>
-        </ul>
-    </div>
-<% end %>
 
-<%= button_to 'Add park to favorites', new_favorite_path, method: :get %>
+<% if @current_user %>
+    <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: @park.id, user_id: @current_user.id } %>
+<% else %>
+    <%= button_to 'Sign up to add to your favorites', new_user_path, method: :get %>
+<% end  %> 

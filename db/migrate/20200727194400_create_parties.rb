@@ -1,10 +1,11 @@
 class CreateParties < ActiveRecord::Migration[6.0]
   def change
     create_table :parties do |t|
-      t.references :user, index: true, foreign_key: true
-      t.references :guest, index: true
-      t.timestamps null: false
+      t.integer :user_id
+      t.integer :park_id
+      t.string :dog_id
+      t.string :date
+      t.string :time
     end
-  add_foreign_key :parties, :users, column: :guest_id
   end
 end

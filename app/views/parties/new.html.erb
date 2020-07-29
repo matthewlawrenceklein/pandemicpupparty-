@@ -1,33 +1,34 @@
-<h1>good party</h1>
 
+<div class="container grey lighten-5">
+  <h1>start a party!</h1>
 
-<% if @party.errors.any? %>
-  <div id="error_explanation">
-    <h2>
-      <%= pluralize(@party.errors.count, "error") %>
-      prohibited this party from being saved:
-    </h2>
- 
-    <ul>
-    <% @party.errors.full_messages.each do |msg| %>
-      <li><%= msg %></li>
-    <% end %>
-    </ul>
-  </div>
-<% end %>
-
-<%= form_for @party  do |f| %>
-    
-    <div class="form_div"><%= f.label :date %></div>
-    <div class="form_div"><%= f.date_field :date %></div>
-    <br>
-    <div class="form_div"><%= f.label :time %></div>
-    <div class="form_div"><%= f.time_field :time %></div>
-    <br>
-    <div class="form_div"><%= f.collection_select :park_id, Park.all, :id, :name %></div>
-    <br />
-    <div class="form_div"><%= f.collection_select :dog_id, @party.user.dogs, :id, :name %></div>
-    <br />
-
-    <div class="form_div"><%= f.submit %></div>
+  <% if @party.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@party.errors.count, "error") %>
+        prohibited this party from being saved:
+      </h2>
+  
+      <ul>
+      <% @party.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
+
+  <%= form_for @party  do |f| %>
+      
+      <div class="form_div"><%= f.label :date %></div>
+      <div class="form_div"><%= f.date_field :date %></div>
+      <br>
+      <div class="form_div"><%= f.label :time %></div>
+      <div class="form_div"><%= f.time_field :time %></div>
+      <br>
+      <div class="form_div"><%= f.collection_select :park_id, Park.all, :id, :name %></div>
+      <br>
+      
+
+      <div class="form_div"><%= f.submit %></div>
+    <% end %>
+</div>

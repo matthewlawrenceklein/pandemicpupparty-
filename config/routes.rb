@@ -1,13 +1,11 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/login'
-  get 'sessions/welcome'
+  resources :user_parties
   resources :parties
   resources :favorites
   resources :parks
   resources :dogs
   resources :users
+  # resources :sessions 
   root "application#index"
   
   get '/sessions/new', to: 'sessions#new', as: 'new_session'

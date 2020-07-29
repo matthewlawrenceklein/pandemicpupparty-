@@ -15,6 +15,7 @@ class PartiesController < ApplicationController
 
     def create
         @party = Party.new(party_params)
+        @party.user_id = @current_user.id 
 
         if @party.valid?
             @party.save
@@ -27,6 +28,6 @@ class PartiesController < ApplicationController
     private
 
     def party_params
-        params.require(:party).permit(:date, :time, :park_id, :dog_id)
+        params.require(:party).permit(:date, :time, :park_id)
     end
 end

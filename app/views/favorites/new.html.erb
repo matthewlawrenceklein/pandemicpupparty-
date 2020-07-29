@@ -1,8 +1,8 @@
 
 <div class="container grey lighten-5">
-    <%= form_for @favorite  do |f| %>
-        <div class="form_div"><%= f.collection_select :user_id, User.all, :id, :name %></div>
-        <br />
-        <div class="form_div"><%= f.submit %></div>
+    <%= form_for @favorite do |f| %>
+        <%= f.label 'test field' %> <br>
+        <%= f.collection_select :park_id, Park.all, :id, :name %> <br>
+        <%= f.submit %>   
     <% end %>
 </div>
