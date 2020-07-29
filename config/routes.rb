@@ -1,16 +1,14 @@
 Rails.application.routes.draw do
-  get 'sessions/new'
-  get 'sessions/create'
-  get 'sessions/login'
-  get 'sessions/welcome'
+  resources :user_parties
   resources :parties
   resources :favorites
   resources :parks
   resources :dogs
   resources :users
+  # resources :sessions 
   root "application#index"
   
-  get 'login', to: 'sessions#new'
-  post 'login', to: 'sessions#create'
-  get 'welcome', to: 'sessions#welcome'
+  get '/sessions/new', to: 'sessions#new', as: 'new_session'
+  post '/sessions', to: 'sessions#login', as: 'login'
+  delete '/sessions/logout', to: 'sessions#logout', as: 'logout'
 end

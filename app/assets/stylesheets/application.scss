@@ -21,6 +21,7 @@
     background-size: cover;
     background-position: center;
     font-family: 'Trebuchet MS', Helvetica, sans-serif;
+    color: #424242;
   }
 
  .box {
@@ -34,7 +35,7 @@
 }
 
 .img {
-    max-width: 100px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -42,6 +43,7 @@
     max-width:1500px;
     align-content: flex-start;
     font-family: "Trebuchet MS", Helvetica, sans-serif;
+
 }
 
 .landing-grid-container{
@@ -49,10 +51,10 @@
     grid-auto-flow: column;
     background-color: rgba(255, 255, 255, 0.5);
     max-width: 100%;
-    margin: 0px auto;
+    margin: 10px 10px;
     padding: 10px;
     height: 150vh;
-    border-radius: 10px
+    border-radius: 10px;
   }
 
 .landing-card {
@@ -70,6 +72,11 @@
     height: 600px;
     width: 700px;
     object-fit: cover;
+}
+
+#nav-mobile {
+    color: white;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
 

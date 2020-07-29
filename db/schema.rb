@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_07_28_200052) do
+ActiveRecord::Schema.define(version: 2020_07_28_223845) do
 
   create_table "dogs", force: :cascade do |t|
     t.string "name"
@@ -38,19 +38,24 @@ ActiveRecord::Schema.define(version: 2020_07_28_200052) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.boolean "has_dog_specific_area"
+    t.string "park_img"
   end
 
   create_table "parties", force: :cascade do |t|
     t.integer "user_id"
-    t.integer "guest_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
+    t.integer "park_id"
+    t.string "dog_id"
     t.string "date"
     t.string "time"
-    t.integer "park_id"
-    t.integer "dog_id"
-    t.index ["guest_id"], name: "index_parties_on_guest_id"
-    t.index ["user_id"], name: "index_parties_on_user_id"
+  end
+
+  create_table "user_parties", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "party_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["party_id"], name: "index_user_parties_on_party_id"
+    t.index ["user_id"], name: "index_user_parties_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -65,6 +70,6 @@ ActiveRecord::Schema.define(version: 2020_07_28_200052) do
   add_foreign_key "dogs", "users"
   add_foreign_key "favorites", "parks"
   add_foreign_key "favorites", "users"
-  add_foreign_key "parties", "users"
-  add_foreign_key "parties", "users", column: "guest_id"
+  add_foreign_key "user_parties", "parties"
+  add_foreign_key "user_parties", "users"
 end

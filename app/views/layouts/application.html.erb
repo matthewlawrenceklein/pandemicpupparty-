@@ -17,24 +17,31 @@
             <a href="#" class="brand-logo center">Pup Party</a>
             <ul id="nav-mobile" class="left hide-on-med-and-down">
               <li><a href="<%= parks_path %>">Parks</a></li>
-              <li><a href=<%= parties_path %>>Parties</a></li>
-              <li><a href=<%= dogs_path %>>Pups</a></li>
+              <li><a href="<%= parties_path %>">Parties</a></li>
+              <li><a href="<%= dogs_path %>">Pups</a></li>
             </ul>
+
             <ul id="nav-mobile" class="right hide-on-med-and-down">
-              <li><a href="<%= parks_path %>">Sign In!</a></li>
-              <li><a href=<%= parties_path %>>Sign Up!</a></li>
+              <% if @current_user %>
+                  <li><a class="waves-effect waves-light btn-flat"><%= button_to 'logout', logout_path, method: :delete %></a></li>
+              <% else %>
+                  <li><a href="<%= new_session_path %>">Sign In!</a></li>
+                  <li><a href="<%= new_user_path %>">Sign Up!</a></li>
+              <% end %>
             </ul>
+
           </div>
         </nav>
-
-
         <!-- Page Layout here -->
     <div class="row">
 
       <div class="col s3 grey z-depth-4">
-        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">location_on</i>My Parks</a>
-        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">pets</i>My Pups</a>
-        <a class=" col s12 waves-effect waves-light btn-large"><i class="material-icons left">people</i>My Parties</a>
+      <% if @current_user %>
+        <a class=" col s12 waves-effect waves-light btn-large" href="<%= user_path(@current_user) %>"><i class="material-icons left">account_circle</i>My Profile</a>
+      <% else %>
+      <p><br></p>
+      <% end %>
+        
       </div>
 
       <div class="col s9 teal lighten-4 z-depth-4">

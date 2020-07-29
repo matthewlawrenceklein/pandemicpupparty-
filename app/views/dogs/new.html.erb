@@ -1,0 +1,26 @@
+<div class="container grey lighten-5">
+  <h1>Add a Pup!</h1>
+
+  <% if flash[:errors] %>
+    <% flash[:errors].each do |error| %>
+      <p style="color: red;"><%= error %></p>
+    <% end %>
+  <% end %>
+
+
+  <%= form_for @dog do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+
+    <%= f.label :breed %>
+    <%= f.text_field :breed %>
+
+    <%= f.label 'Energy Level - Low/Med/High' %>
+    <%= f.text_field :energy_level %>
+
+    <%=f.label 'Picture Image Link' %>
+    <%=f.text_field :picture %>
+
+    <%= f.submit %>
+  <% end %>
+</div>

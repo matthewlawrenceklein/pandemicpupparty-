@@ -1,10 +1,11 @@
 class Party < ApplicationRecord
 
     belongs_to :user
-    belongs_to :guest, class_name: "User"
+    has_many :user_parties
+    has_many :users, through: :user_parties
 
-    validates :date, presence: true
-    validates :time, presence: true 
+    # validates :date, presence: true
+    # validates :time, presence: true 
 
 
 
