@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   resources :dogs
   resources :users
   # resources :sessions 
-  root "application#index"
+  root to: "application#index"
   
   get '/sessions/new', to: 'sessions#new', as: 'new_session'
   post '/sessions', to: 'sessions#login', as: 'login'
