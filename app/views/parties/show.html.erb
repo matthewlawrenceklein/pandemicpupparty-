@@ -7,9 +7,18 @@
     <h3>Date: <%= @party.date %> at <%= @party.time %> </h3>
     <% host = User.all.find { |user| user.id == @party.user_id } %>
     <h3>Host: <%= link_to host.name, user_path(host) %> </h3>
+<<<<<<< HEAD
     <% if @current_user.id == @party.user_id || @party.users.find {|user| user.id == @current_user.id} %>
     <% else %>
         <a class="waves-effect waves-light btn"><%= button_to 'Join the Party', user_parties_path , method: :post, params: { party_id: @party.id, user_id: @current_user.id }, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
+=======
+
+    <% if @current_user %>
+        <% if @current_user.id == @party.user_id || @party.users.find {|user| user.id == @current_user.id} %>
+        <% else %>
+        <a class="waves-effect waves-light btn"><%= button_to 'Join the Party', user_parties_path , method: :post, params: { party_id: @party.id, user_id: @current_user.id } %></a>
+        <% end %>
+>>>>>>> 39d4020904f5fa6c3d01b08e926e375f18b6c192
     <% end %>
     <main class="cards">
         <% @party.user.dogs.each do |dog|%>

@@ -25,10 +25,11 @@
       <div class="form_div"><%= f.label :time %></div>
       <div class="form_div"><%= f.time_field :time %></div>
       <br>
-      <div class="form_div"><%= f.collection_select :park_id, Park.all, :id, :name %></div>
+      <div class="form_div"><%= collection_radio_buttons(:party, :park_id, Park.all, :id, :name) %></div>
       <br>
       
 
       <div class="form_div"><%= f.submit %></div>
     <% end %>
 </div>
+
