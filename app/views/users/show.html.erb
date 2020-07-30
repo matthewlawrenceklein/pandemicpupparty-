@@ -31,8 +31,8 @@
                 <img src="<%= park.park_img %>">
                 <div class="text">
                     <h3>It's a party at <%= park.name %></h3>
-                    <p>On ##date## <%= party.date %> at ##time## <%= party.time %> </p>
-                    <button><%= link_to 'Join the Party!', party_path(party) %></button>
+                    <p>On <%= party.date %> at <%= party.time %> </p>
+                    <button class="grey lighten-2"><%= link_to 'Party Details', party_path(party) %></button>
                 </div>
             </article>
         <% end %>
