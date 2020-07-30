@@ -1,6 +1,5 @@
-
-<div class="container grey lighten-5">
-  <h1>start a party!</h1>
+<h1>start a party!</h1>
+<div style="margin-bottom: 40px; padding:15px"; class="container grey lighten-5">
 
   <% if @party.errors.any? %>
     <div id="error_explanation">
@@ -29,7 +28,9 @@
       <br>
       
 
-      <div class="form_div"><%= f.submit %></div>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Create Party
+    <i class="material-icons right">send</i>
+  </button>
     <% end %>
 </div>
 
