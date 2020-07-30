@@ -2,7 +2,7 @@
 
     <h3><%= @user.name.capitalize %>'s profile</h3>
 
-        <% if @current_user.id == @user.id %>
+        <% if @current_user && @current_user.id == @user.id %>
             <a class="waves-effect waves-light btn"><%= button_to 'Add a Pup', new_dog_path, method: :get %></a>
             <a class="waves-effect waves-light btn"><%= button_to 'Favorite a Park', parks_path, method: :get %></a>
             <a class="waves-effect waves-light btn"><i class="material-icons right"></i><%= button_to 'Start a Party', new_party_path, method: :get %></a>
