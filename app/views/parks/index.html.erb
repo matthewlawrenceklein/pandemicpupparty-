@@ -7,7 +7,11 @@
                     <img src="<%= park.park_img %>">
                     <div class="text">
                         <h3><%= park.name %> Dog Park</h3>
-                        <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id } %>
+                        <% if @current_user %>
+                            <%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id } %>
+                        <% else %>
+                            <%= button_to 'Sign Up To Add To Your Favorites!', new_user_path , method: :get %>
+                        <% end %>
                     </div>
                 </article>
          
