@@ -3,11 +3,11 @@
 
     <h1>Party Details</h1>
     <% park = Park.all.find { |park| park.id == @party.park_id }%>
-    <h2> at <%= link_to park.name, park_path(park) %></h2>
-    <h3> on <%= @party.date %> at <%= @party.time %> </h3>
-    <%= button_to 'Join the Party', user_parties_path , method: :post, params: { party_id: @party.id, user_id: @current_user.id } %>
+    <h3> Location: <%= link_to park.name, park_path(park) %></h3>
+    <h3>Date: <%= @party.date %> at <%= @party.time %> </h3>
     <% host = User.all.find { |user| user.id == @party.user_id } %>
-    <h3> a party started by <%= link_to host.name, user_path(host) %> </h3>
+    <h3>Host: <%= link_to host.name, user_path(host) %> </h3>
+    <a class="waves-effect waves-light btn"><%= button_to 'Join the Party', user_parties_path , method: :post, params: { party_id: @party.id, user_id: @current_user.id } %></a>
 
     <main class="cards">
         <% @party.user.dogs.each do |dog|%>

@@ -44,7 +44,7 @@
     font-family: "Trebuchet MS", Helvetica, sans-serif;
 }
 
-.landing-grid-container{
+.landing-container{
     display: grid;
     grid-auto-flow: column;
     background-color: rgba(255, 255, 255, 0.5);
@@ -66,7 +66,7 @@
     color: white;
 }
 
-.landing-card-image {
+.landing-image {
     height: 600px;
     width: 700px;
     object-fit: cover;
