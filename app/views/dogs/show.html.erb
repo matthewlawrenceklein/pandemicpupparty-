@@ -1,6 +1,7 @@
 <div style="margin-bottom: 40px; padding:15px"; class="container">
     <h2> Meet <%= @dog.name %></h2>
-    <h4><%= @dog.name %>'s owner is <%= link_to @dog.user.name, user_path(@dog.user) %>. <%= @dog.name %> is a <%= @dog.breed %>.</h4>
+    <img class="dog_pic" src="<%= @dog.picture %>" alt="">
+    <h4><%= @dog.name %>'s owner is <%= link_to @dog.user.name, user_path(@dog.user) %>. <%= @dog.name %> is a <%=@dog.energy_level%> energy <%= @dog.breed %>.</h4>
     <br>
     <a class="waves-effect waves-light btn"><%= button_to 'Back', dogs_path, method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
 </div>
