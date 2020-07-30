@@ -4,8 +4,9 @@ class Party < ApplicationRecord
     has_many :user_parties
     has_many :users, through: :user_parties
 
-    # validates :date, presence: true
-    # validates :time, presence: true 
+    validates :date, presence: true
+    validates :time, presence: true 
+    validates :park_id, presence: true 
 
 
 

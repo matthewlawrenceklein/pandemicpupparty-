@@ -1,12 +1,20 @@
 <div class="container grey lighten-5">
   <h1>Add a Pup!</h1>
 
-  <% if flash[:errors] %>
-    <% flash[:errors].each do |error| %>
-      <p style="color: red;"><%= error %></p>
-    <% end %>
+   <% if @dog.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@dog.errors.count, "error") %>
+        prohibited this party from being saved:
+      </h2>
+  
+      <ul>
+      <% @dog.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
   <% end %>
-
 
   <%= form_for @dog do |f| %>
     <%= f.label :name %>
