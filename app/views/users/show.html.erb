@@ -1,11 +1,13 @@
 <div class="container">
 
     <h3><%= @user.name.capitalize %>'s profile</h3>
+    <% if @current_user %>
         <% if @current_user.id == @user.id %>
             <a class="waves-effect waves-light btn"><%= button_to 'Add a Pup', new_dog_path, method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
             <a class="waves-effect waves-light btn"><%= button_to 'Favorite a Park', parks_path, method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
             <a class="waves-effect waves-light btn"><i class="material-icons right"></i><%= button_to 'Start a Party', new_party_path, method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
         <% end %>
+    <% end %>
 <hr>
 <h4>My Pups</h4>
     <main class="cards">
@@ -24,6 +26,7 @@
         <br>
 
     <main class="cards">
+
         <% @user.parties.each do |party|%>
             <% park = Park.all.find { |park| park.id == party.park_id }%>
             <article class="card z-depth-3">
