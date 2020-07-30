@@ -1,6 +1,5 @@
-<div class="container grey lighten-5">
-  <h1>Add a Pup!</h1>
-
+<h1>Add a Pup!</h1>
+<div style="margin-bottom: 40px; padding:15px"; class="container grey lighten-5">
    <% if @dog.errors.any? %>
     <div id="error_explanation">
       <h2>
@@ -29,6 +28,8 @@
     <%=f.label 'Picture Image Link' %>
     <%=f.text_field :picture %>
 
-    <%= f.submit %>
+      <button class="btn waves-effect waves-light" type="submit" name="action">Create Dog
+    <i class="material-icons right">send</i>
+  </button>
   <% end %>
 </div>
