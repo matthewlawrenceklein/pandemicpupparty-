@@ -10,9 +10,9 @@
                             <% if @current_user && @current_user.parks.find { |user_park| user_park.id. == park.id } %>
                                 <a class="waves-effect waves-light btn">Favorited</a>
                             <% elsif @current_user %>
-                                <a class="waves-effect waves-light btn"><%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id } %></a>
+                                <a class="waves-effect waves-light btn"><%= button_to 'Add to favorites', favorites_path , method: :post, params: { park_id: park.id, user_id: @current_user.id}, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
                              <% else %>
-                                <a class="waves-effect waves-light btn"><%= button_to 'Sign up to favorite parks!', new_user_path , method: :get %></a>
+                                <a class="waves-effect waves-light btn"><%= button_to 'Sign up to favorite parks!', new_user_path , method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
                             <% end %>    
                     </div>
                 </article>

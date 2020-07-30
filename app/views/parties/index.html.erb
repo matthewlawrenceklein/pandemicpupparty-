@@ -10,7 +10,7 @@
                     <div class="text">
                         <h3>It's a party at <%= park.name %></h3>
                         <p>On <%= party.date %> at <%= party.time %> </p>
-                        <button class="grey lighten-2"><%= link_to 'Party Details', party_path(party) %></button>
+                        <a class="waves-effect waves-light btn"><%= button_to 'Party Details', party_path(party), method: :get, style:"color: white; font-family: Trebuchet MS, Helvetica, sans-serif" %></a>
                     </div>
                 </article>
          
