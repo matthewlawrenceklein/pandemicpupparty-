@@ -1,0 +1,17 @@
+<div class="container">
+    <h1>Analytics</h1>
+
+
+    <h4>Total Users - <%= @users.count %></h4>
+    <h4>Avg # Dogs/User - <%= @dogs.count / @users.count %></h4>
+    <h4>Avg # Favorites/User - <%= @favorites.count / @users.count %></h4>
+    <h4>Avg # Parties/User - <%= @parties.count / @users.count %></h4>
+    <h4>Most Parties for a User - <% most_parties = @users.all.find {|user| user.parties.max } %> <%= most_parties.parties.count %></h4>
+    <h4>Park w Most Favorites - <% park = Park.all.find { |park| park.favorites.max }%>  <%= park.name %>with <%= park.favorites.count %> favs  </h4>
+
+
+
+
+
+
+</div>
